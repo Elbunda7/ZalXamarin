@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"               
+             x:Class="ZalXamarin.SideMenu.SideMenu"
+             xmlns:pages="clr-namespace:ZalXamarin.SideMenu"
+             xmlns:menuItems="ZalXamarin.Pages.ActualitiesPage"> <!--umisteni uvodni stranky-->
+  <MasterDetailPage.Master>
+    <pages:SideMenuMaster x:Name="MasterPage" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <menuItems:ActualitiesPage /> <!--uvodni stranka pro zobrazeni-->
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>
