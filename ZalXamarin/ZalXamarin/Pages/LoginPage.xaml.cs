@@ -1,4 +1,4 @@
-﻿using DL;
+﻿using ZalDomain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace ZalXamarin.Pages
         }
 
         private async void LoginUser(string email, string password) {
-            bool isLogged = IS.Login(email, password);
+            bool isLogged = Zal.Login(email, password);
             if (isLogged) {
                 ShowProfile();
             }

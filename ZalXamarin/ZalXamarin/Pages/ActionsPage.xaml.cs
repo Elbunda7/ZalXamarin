@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,7 +20,7 @@ namespace ZalXamarin.Pages
         public ActionsPage() {
             InitializeComponent();
             Title = "Plán akcí";
-            ICollection<ActionEvent> items = IS.Actions.GetAll();
+            ICollection<ActionEvent> items = Zal.Actions.GetAll();
             MyListView.ItemsSource = items;
         }
 

@@ -1,4 +1,4 @@
-﻿using DL;
+﻿using ZalDomain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace ZalXamarin.Pages
         }
 
         private async void RegistrationButton_Click(object sender, EventArgs args) {
-            bool isRegistered = IS.Register(NameEntry.Text, SurnameEntry.Text, PhoneEntry.Text, EmailEntry.Text, PassEntry.Text);
+            bool isRegistered = Zal.Register(NameEntry.Text, SurnameEntry.Text, PhoneEntry.Text, EmailEntry.Text, PassEntry.Text);
             if (isRegistered) {
                 Navigation.InsertPageBefore(new EmptyPage(), Navigation.NavigationStack.First());
                 await Navigation.PopToRootAsync();

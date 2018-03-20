@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace ZalXamarin.Pages
         public MembersPage() {
             InitializeComponent();
             Title = "Členové";
-            MyListView.ItemsSource = IS.Users.GetAll();
+            MyListView.ItemsSource = Zal.Users.GetAll();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {

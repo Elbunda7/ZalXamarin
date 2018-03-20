@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +42,7 @@ namespace ZalXamarin.Pages.Actions
         }
 
         private void ParticipateButton_Clicked(object sender, EventArgs args) {
-            action.Participate(IS.Me, true);
+            action.Participate(Zal.Me, true);
         }
 
         private void ClickableImageLabel_OnClick() {

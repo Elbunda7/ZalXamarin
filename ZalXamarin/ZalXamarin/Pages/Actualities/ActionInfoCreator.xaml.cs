@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace ZalXamarin.Pages.Actualities
         }
 
         private void AddButton_Clicked(object sender, EventArgs args) {
-            IS.Actualities.AddNewInfo(action, textEditor.Text, 0, 0, 0);
+            Zal.Actualities.AddNewInfo(action, textEditor.Text, 0, 0, 0);
             Navigation.PopAsync();
         }
 

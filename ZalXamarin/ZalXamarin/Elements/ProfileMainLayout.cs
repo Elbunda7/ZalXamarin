@@ -11,7 +11,7 @@ namespace ZalXamarin.Elements
     public class ProfileMainLayout: StackLayout
     {
         private const int HEIGHT_SIZE = 150;
-        public DL.ActiveRecords.User User { get; set; }
+        public ZalDomain.ActiveRecords.User User { get; set; }
 
         public ProfileMainLayout(){
             HeightRequest = HEIGHT_SIZE;

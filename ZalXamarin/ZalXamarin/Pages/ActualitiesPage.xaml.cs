@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -18,7 +18,7 @@ namespace ZalXamarin.Pages
         public ActualitiesPage() {
             InitializeComponent();
             Title = "Novinky";
-            MyListView.ItemsSource = IS.Actualities.GetAll();
+            MyListView.ItemsSource = Zal.Actualities.GetAll();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {

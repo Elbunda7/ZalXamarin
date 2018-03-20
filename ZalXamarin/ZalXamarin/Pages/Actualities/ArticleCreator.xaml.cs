@@ -1,4 +1,4 @@
-﻿using DL;
+﻿using ZalDomain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace ZalXamarin.Pages.Actualities
         }
 
         private void AddButton_Clicked(object sender, EventArgs args) {
-            IS.Actualities.AddNewArticle("Title", textEditor.Text, 0);
+            Zal.Actualities.AddNewArticle("Title", textEditor.Text, 0);
             Navigation.PopAsync();
         }
     }

@@ -1,5 +1,5 @@
-﻿using DL;
-using DL.ActiveRecords;
+﻿using ZalDomain;
+using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace ZalXamarin.Pages
 
         public ProfilePage(User user = null) {
             if (user == null) {
-                CurrentUser = IS.Me;
+                CurrentUser = Zal.Me;
             }
             else {
                 CurrentUser = user;
@@ -47,7 +47,7 @@ namespace ZalXamarin.Pages
         }
 
         private async void LogOutButton_Clicked(object sender, EventArgs args) {
-            IS.Logout();
+            Zal.Logout();
             Navigation.InsertPageBefore(new LoginPage(), Navigation.NavigationStack.First());
             await Navigation.PopToRootAsync();
         }

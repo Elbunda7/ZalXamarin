@@ -182,12 +182,6 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZalXamarin\ZalXamarin.csproj">
-      <Project>{2348625b-6156-493f-a49d-6b87d4ad981e}</Project>
-      <Name>ZalXamarin</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\Splash.png" />
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +339,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_bookmark_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZalXamarin\ZalXamarin.csproj">
+      <Project>{e8ff7c46-012a-4151-ab13-77aa1935fe67}</Project>
+      <Name>ZalXamarin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

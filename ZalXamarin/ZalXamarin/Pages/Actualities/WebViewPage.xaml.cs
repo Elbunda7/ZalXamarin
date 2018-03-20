@@ -1,4 +1,4 @@
-﻿using DL.ActiveRecords;
+﻿using ZalDomain.ActiveRecords;
 using System;
 using System.Collections.Generic;
 using System.Linq;

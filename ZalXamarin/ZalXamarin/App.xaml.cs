@@ -1,6 +1,6 @@
 ﻿using ZalApiGateway;
-using DL.ActiveRecords;
-using DL.tools;
+using ZalDomain.ActiveRecords;
+using ZalDomain.tools;
 using PCLStorage;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xamarin.Forms;
+using ZalDomain;
 
 namespace ZalXamarin
 {
@@ -22,31 +23,24 @@ namespace ZalXamarin
 
         public App() {
             InitializeComponent();
-            IS.CommandExecutedOffline += OnCommandExecutedOffline;
-            IS.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
-            IS.LoadLocalData(LoadFromStorage(LOCAL_DATA_FILE));
+            Zal.CommandExecutedOffline += OnCommandExecutedOffline;
+            Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
+            Zal.LoadLocalData(LoadFromStorage(LOCAL_DATA_FILE));
             //IS.Connect();            
             MainPage = new SideMenu.SideMenu();
             Connect();
         }
 
         private async void Connect() {
-            ZalApiGateway.ActionGateway gateway = new ZalApiGateway.ActionGateway();
-            Collection<ZalApiGateway.Models.ActionModel> models = await gateway.GetAllAsync();
-            ZalApiGateway.Models.ActionModel model = await gateway.GetAsync(2);
-
-            /*Security security = new Security();
-            string text = "nějaký text";
-            text = security.Encrypt(text);
-            text = security.Decrypt(text);
-            var values = new Dictionary<string, string> {
-                { "body", text }
-             };
-            HttpContent content = new FormUrlEncodedContent(values);
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.PostAsync("http://zalesak.hlucin.com/api/endpoint.php", content);
-            string str = await response.Content.ReadAsStringAsync();
-            str = security.Decrypt(str);*/
+            ActionGateway gateway = new ActionGateway();
+            //var task = gateway.GetAllAsync();
+            //Collection<ZalApiGateway.Models.ActionModel> models = await gateway.GetAllAsync();
+            var task = gateway.GetAsync(2);
+            var task2 = gateway.GetAsync(3);
+            ZalApiGateway.Models.ActionModel model = await task;
+            ZalApiGateway.Models.ActionModel model2 = await task2;
+            //bool info = await gateway.JoinAsync(81, 1);
+            //bool info2 = await gateway.AddAsync(model);
         }
 
 
@@ -54,7 +48,7 @@ namespace ZalXamarin
         }
 
         protected override void OnSleep() {
-            SaveToStorage( LOCAL_DATA_FILE, IS.GetLocalDataXml().ToString());
+            SaveToStorage( LOCAL_DATA_FILE, Zal.GetLocalDataXml().ToString());
         }
 
         protected override void OnResume() {
