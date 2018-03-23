@@ -19,9 +19,9 @@ namespace ZalXamarin.Pages.Actualities
             Title = "Nový článek";
         }
 
-        private void AddButton_Clicked(object sender, EventArgs args) {
-            Zal.Actualities.AddNewArticle("Title", textEditor.Text, 0);
-            Navigation.PopAsync();
+        private async Task AddButton_Clicked(object sender, EventArgs args) {
+            await Zal.Actualities.CreateNewArticle("Title", textEditor.Text, 0);
+            await Navigation.PopAsync();
         }
     }
 }

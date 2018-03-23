@@ -22,9 +22,9 @@ namespace ZalXamarin.Pages.Actualities
             Title = action.Name + " - zápis z akce";
         }
 
-        private void AddButton_Clicked(object sender, EventArgs args) {
-            Zal.Actualities.AddNewRecord(action, textEditor.Text);
-            Navigation.PopAsync();
+        private async void AddButton_Clicked(object sender, EventArgs args) {
+            await action.CreateNewReport(Title, textEditor.Text);
+            await Navigation.PopAsync();
         }
     }
 }

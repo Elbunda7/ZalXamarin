@@ -33,20 +33,20 @@ namespace ZalXamarin.Pages.Actions
         }
 
         private void RecordButton_Clicked(object sender, EventArgs args) {
-            if (action.Record == null) {
+            if (action.Report == null) {
                 Navigation.PushAsync(new ActionRecordCreator(action));
             }
             else {
-                Navigation.PushAsync(new WebViewPage(action.Record));
+                Navigation.PushAsync(new WebViewPage(action.Report));
             }
         }
 
-        private void ParticipateButton_Clicked(object sender, EventArgs args) {
-            action.Participate(Zal.Me, true);
+        private async void ParticipateButton_ClickedAsync(object sender, EventArgs args) {
+            bool result = await action.Participate(true);
         }
 
         private void ClickableImageLabel_OnClick() {
-            Navigation.PushAsync(new WebViewPage(action.Record));
+            Navigation.PushAsync(new WebViewPage(action.Report));
         }
     }
 }

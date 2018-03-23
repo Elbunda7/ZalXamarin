@@ -22,9 +22,9 @@ namespace ZalXamarin.Pages.Actualities
             Title = action.Name + " - informačka";
         }
 
-        private void AddButton_Clicked(object sender, EventArgs args) {
-            Zal.Actualities.AddNewInfo(action, textEditor.Text, 0, 0, 0);
-            Navigation.PopAsync();
+        private async Task AddButton_Clicked(object sender, EventArgs args) {
+            await action.CreateNewInfo(Title, textEditor.Text);
+            await Navigation.PopAsync();
         }
 
     }

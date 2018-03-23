@@ -19,7 +19,7 @@ namespace ZalXamarin.Pages
 
         public ProfilePage(User user = null) {
             if (user == null) {
-                CurrentUser = Zal.Me;
+                CurrentUser = Zal.Session.CurrentUser;
             }
             else {
                 CurrentUser = user;

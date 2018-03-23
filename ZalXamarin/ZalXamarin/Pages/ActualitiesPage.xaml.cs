@@ -22,8 +22,8 @@ namespace ZalXamarin.Pages
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {
-            if (e.Item is Actuality) {
-                IActualityItem item = (e.Item as Actuality).Item;
+            if (e.Item is Article) {
+                Article item = e.Item as Article;
                 await Navigation.PushAsync(new WebViewPage(item));
                 (sender as ListView).SelectedItem = null;
             }

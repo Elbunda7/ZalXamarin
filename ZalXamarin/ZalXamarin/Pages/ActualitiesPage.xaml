@@ -33,7 +33,6 @@
             <local:RoundedButton Icon="ic_edit_black_24dp.png"/>
             <local:RoundedButton Icon="ic_edit_black_24dp.png" BackgroundColor="Azure"/>
             <local:RoundedButton Icon="ic_edit_black_24dp.png" Text="dloooooooo000000000uhy" IsCircle="False"/>
-            <local:RoundedButton Text="txt" Diameter="360"/>
 
         </StackLayout>
 
