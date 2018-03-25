@@ -18,7 +18,7 @@ namespace ZalXamarin.Pages
         public ActualitiesPage() {
             InitializeComponent();
             Title = "Novinky";
-            MyListView.ItemsSource = Zal.Actualities.GetAll();
+            //MyListView.ItemsSource = Zal.Actualities.GetAll();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {

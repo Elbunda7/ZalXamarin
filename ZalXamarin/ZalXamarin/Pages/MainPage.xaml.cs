@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZalXamarin.Pages.Actions;
 
 namespace ZalXamarin.Pages
 {
@@ -16,7 +17,11 @@ namespace ZalXamarin.Pages
             InitializeComponent();
             Title = "Hlavní stránka";            
             Children.Add(new ActualitiesPage());
-            Children.Add(new ActionsPage());            
+            Children.Add(new ActionsPage());
+        }
+
+        private async void AddButton_Clicked(object sender, EventArgs args) {
+            await Navigation.PushAsync(new ActionCreator());
         }
     }
 }

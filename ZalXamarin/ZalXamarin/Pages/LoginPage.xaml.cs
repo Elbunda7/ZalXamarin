@@ -23,7 +23,7 @@ namespace ZalXamarin.Pages
         }
 
         private async void LoginUser(string email, string password) {
-            bool isLogged = await Zal.LoginAsync(email, password);
+            bool isLogged = false;// await Zal.LoginAsync(email, password);
             if (isLogged) {
                 ShowProfile();
             }

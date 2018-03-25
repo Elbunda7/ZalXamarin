@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZalXamarin.Pages.MainPage">
+             x:Class="ZalXamarin.Pages.MainPage"
+            xmlns:local="clr-namespace:ZalXamarin.Elements">
+  
+  <!--<AbsoluteLayout>
+  <local:ActionButton
+            Clicked="AddButton_Clicked"
+            Image="ic_add_black.png"
+            AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional" />
+  </AbsoluteLayout>-->
+  
 </TabbedPage>

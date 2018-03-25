@@ -21,13 +21,7 @@
                     <action:ActionListViewCell/>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-
-        <local:ActionButton
-            Clicked="AddButton_Clicked"
-            Image="ic_add_black.png"
-            AbsoluteLayout.LayoutBounds="1,1,-1,-1"
-            AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </ListView>        
 
     </AbsoluteLayout>
 

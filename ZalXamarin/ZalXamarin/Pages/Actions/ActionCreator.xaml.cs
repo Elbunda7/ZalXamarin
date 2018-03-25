@@ -18,8 +18,8 @@ namespace ZalXamarin.Pages.Actions
         }
 
         private async void AddButton_Clicked(object sender, EventArgs args) {
-            string type = TypeEntry.Text == null ? "" : TypeEntry.Text;
-            string name = NameEntry.Text == null ? "" : NameEntry.Text;
+            string type = TypeEntry.Text ?? "";
+            string name = NameEntry.Text ?? "";
             int days = DaysEntry.Text == null ? 0 : int.Parse(DaysEntry.Text);
             Zal.Actions.InsertNewAction(name, type, datePicker.Date, datePicker.Date, 0, true);
             await Navigation.PopAsync();

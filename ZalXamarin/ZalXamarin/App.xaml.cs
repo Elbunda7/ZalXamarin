@@ -23,12 +23,13 @@ namespace ZalXamarin
 
         public App() {
             InitializeComponent();
-            Zal.CommandExecutedOffline += OnCommandExecutedOffline;
-            Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
-            Zal.LoadLocalData(LoadFromStorage(LOCAL_DATA_FILE));
+            //Zal.CommandExecutedOffline += OnCommandExecutedOffline;
+            //Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
+            //Zal.LoadLocalData(LoadFromStorage(LOCAL_DATA_FILE));
             //IS.Connect();            
+            Zal.StartSynchronizing();
             MainPage = new SideMenu.SideMenu();
-            Connect();
+            //Connect();
         }
 
         private async void Connect() {

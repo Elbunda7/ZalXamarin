@@ -16,11 +16,19 @@ namespace ZalXamarin.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActionsPage : ContentPage
     {
+        
 
         public ActionsPage() {
             InitializeComponent();
             Title = "Plán akcí";
-            ICollection<ActionEvent> items = Zal.Actions.GetAll();
+            ICollection<ActionEvent> items = Zal.Actions.UpcomingActionEvents;//as property?
+            MyListView.ItemsSource = items;
+        }
+
+        public ActionsPage(int year) {
+            InitializeComponent();
+            Title = "Plán akcí";
+            ICollection<ActionEvent> items = Zal.Actions.GetActionEventsByYear(year);//as property
             MyListView.ItemsSource = items;
         }
 
@@ -32,9 +40,7 @@ namespace ZalXamarin.Pages
             }
         }
 
-        private async void AddButton_Clicked(object sender, EventArgs args) {
-            await Navigation.PushAsync(new ActionCreator());
-        }
+        
 
         private async void tapStart() {
             await DisplayAlert("Pinch", "start", "ok");
