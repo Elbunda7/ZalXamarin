@@ -37,7 +37,7 @@ namespace ZalXamarin.SideMenu
                 MenuItems = new ObservableCollection<SideMenuItem>(
                 new[]{
                     new SideMenuItem("Aktuality", typeof(ActualitiesPage), "ic_explore_black_24dp.png"),
-                    new SideMenuItem("Plán akcí", typeof(MainPage), "ic_event_black_24dp.png"),
+                    new SideMenuItem("Plán akcí", typeof(ActionTabbedPage), "ic_event_black_24dp.png"),
                     new SideMenuItem("Členové", typeof(MembersPage), "ic_people_black_24dp.png"),
                     new SideMenuItem("Galerie", typeof(GaleryPage), "ic_photo_library_black_24dp.png"),
                     new SideMenuItem("Studnice vědění", typeof(InformationPage), "ic_apps_black_24dp.png"),

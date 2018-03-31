@@ -23,21 +23,21 @@ namespace ZalXamarin.Pages.Actions
             BindingContext = action;
         }
 
-        private void InfoButton_Clicked(object sender, EventArgs args) {
-            if (action.Info == null) {
-                Navigation.PushAsync(new ActionInfoCreator(action));
+        private async Task InfoButton_ClickedAsync(object sender, EventArgs args) {
+            if (action.HasInfo) {
+                await Navigation.PushAsync(new ActionInfoCreator(action));
             }
             else {
-                Navigation.PushAsync(new WebViewPage(action.Info));
+                await Navigation.PushAsync(new WebViewPage(await action.InfoLazyLoad()));
             }
         }
 
-        private void RecordButton_Clicked(object sender, EventArgs args) {
-            if (action.Report == null) {
-                Navigation.PushAsync(new ActionRecordCreator(action));
+        private async Task RecordButton_ClickedAsync(object sender, EventArgs args) {
+            if (action.HasReport) {
+                await Navigation.PushAsync(new ActionRecordCreator(action));
             }
             else {
-                Navigation.PushAsync(new WebViewPage(action.Report));
+                await Navigation.PushAsync(new WebViewPage(await action.ReportLazyLoad()));
             }
         }
 
@@ -45,8 +45,8 @@ namespace ZalXamarin.Pages.Actions
             bool result = await action.Participate(true);
         }
 
-        private void ClickableImageLabel_OnClick() {
-            Navigation.PushAsync(new WebViewPage(action.Report));
+        private async Task ClickableImageLabel_OnClickAsync() {
+            await Navigation.PushAsync(new WebViewPage(await action.ReportLazyLoad()));
         }
     }
 }

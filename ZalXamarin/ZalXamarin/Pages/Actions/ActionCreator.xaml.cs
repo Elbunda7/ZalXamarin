@@ -21,7 +21,7 @@ namespace ZalXamarin.Pages.Actions
             string type = TypeEntry.Text ?? "";
             string name = NameEntry.Text ?? "";
             int days = DaysEntry.Text == null ? 0 : int.Parse(DaysEntry.Text);
-            Zal.Actions.InsertNewAction(name, type, datePicker.Date, datePicker.Date, 0, true);
+            await Zal.Actions.AddNewActionAsync(name, type, datePicker.Date, datePicker.Date, 0, true);
             await Navigation.PopAsync();
         }
     }

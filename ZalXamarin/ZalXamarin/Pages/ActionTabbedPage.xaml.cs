@@ -11,13 +11,13 @@ using ZalXamarin.Pages.Actions;
 namespace ZalXamarin.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public partial class ActionTabbedPage : TabbedPage
     {
-        public MainPage() {
+        public ActionTabbedPage() {
             InitializeComponent();
-            Title = "Hlavní stránka";            
-            Children.Add(new ActualitiesPage());
-            Children.Add(new ActionsPage());
+            Title = "Plán akcí";            
+            Children.Add(new ActionsListPage());
+            Children.Add(new ActionsListPage(DateTime.Today.Year));
         }
 
         private async void AddButton_Clicked(object sender, EventArgs args) {

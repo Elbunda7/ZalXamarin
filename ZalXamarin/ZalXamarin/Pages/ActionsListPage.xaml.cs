@@ -14,22 +14,23 @@ using ZalXamarin.Pages.Actions;
 namespace ZalXamarin.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ActionsPage : ContentPage
+    public partial class ActionsListPage : ContentPage
     {
-        
 
-        public ActionsPage() {
+        public ActionsListPage(int? year = null) {
             InitializeComponent();
-            Title = "Plán akcí";
-            ICollection<ActionEvent> items = Zal.Actions.UpcomingActionEvents;//as property?
-            MyListView.ItemsSource = items;
+            StartInitializingItems(year);
         }
 
-        public ActionsPage(int year) {
-            InitializeComponent();
-            Title = "Plán akcí";
-            ICollection<ActionEvent> items = Zal.Actions.GetActionEventsByYear(year);//as property
-            MyListView.ItemsSource = items;
+        private async void StartInitializingItems(int? year) {
+            if (year.HasValue) {
+                Title = year.Value.ToString();
+                MyListView.ItemsSource = await Zal.Actions.GetActionEventsByYearAsync(year.Value);
+            }
+            else {
+                Title = "Nadcházející";
+                MyListView.ItemsSource = Zal.Actions.UpcomingActionEvents;
+            }
         }
 
         private async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {
@@ -38,16 +39,6 @@ namespace ZalXamarin.Pages
                 await Navigation.PushAsync(new ActionDetail(currentEvent));
                 (sender as ListView).SelectedItem = null;
             }
-        }
-
-        
-
-        private async void tapStart() {
-            await DisplayAlert("Pinch", "start", "ok");
-        }
-
-        private async void tapFinish() {
-            await DisplayAlert("Pinch", "finish", "ok");
         }
     }
 }

@@ -46,8 +46,8 @@
     <Compile Include="Elements\ProfileMainLayout.cs" />
     <Compile Include="Elements\RoundedButton.cs" />
     <Compile Include="Elements\SideMenuViewCell.cs" />
-    <Compile Include="Pages\ActionsPage.xaml.cs">
-      <DependentUpon>ActionsPage.xaml</DependentUpon>
+    <Compile Include="Pages\ActionsListPage.xaml.cs">
+      <DependentUpon>ActionsListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Actions\ActionCreator.xaml.cs">
       <DependentUpon>ActionCreator.xaml</DependentUpon>
@@ -88,8 +88,8 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Pages\ActionTabbedPage.xaml.cs">
+      <DependentUpon>ActionTabbedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MembersPage.xaml.cs">
       <DependentUpon>MembersPage.xaml</DependentUpon>
@@ -160,7 +160,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\ActionsPage.xaml">
+    <EmbeddedResource Include="Pages\ActionsListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -178,7 +178,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\MainPage.xaml">
+    <EmbeddedResource Include="Pages\ActionTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -23,7 +23,7 @@ namespace ZalXamarin.Pages.Actualities
         }
 
         private async Task AddButton_Clicked(object sender, EventArgs args) {
-            await action.CreateNewInfo(Title, textEditor.Text);
+            await action.AddNewInfoAsync(Title, textEditor.Text);
             await Navigation.PopAsync();
         }
 

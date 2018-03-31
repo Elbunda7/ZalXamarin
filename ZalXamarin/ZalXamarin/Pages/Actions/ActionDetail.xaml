@@ -59,7 +59,7 @@
                             Grid.Column="0"
                             Grid.Row="1" 
                             HorizontalOptions="Center"
-                            BackgroundColor="Bisque" Padding="5,0" Icon="ic_add_black.png" OnClick="ClickableImageLabel_OnClick"/>
+                            BackgroundColor="Bisque" Padding="5,0" Icon="ic_add_black.png" OnClick="ClickableImageLabel_OnClickAsync"/>
                         <local:ClickableImageLabel 
                             Padding="5,0"
                             HorizontalOptions="Center"
@@ -101,12 +101,12 @@
         x:Name="InfoButton"
         Text="Informačka"
             
-        Clicked="InfoButton_Clicked"/>
+        Clicked="InfoButton_ClickedAsync"/>
 
             <Button
         x:Name="RecordButton"
         Text="Zápis z akce"
-        Clicked="RecordButton_Clicked"/>
+        Clicked="RecordButton_ClickedAsync"/>
 
             </StackLayout>
         </StackLayout>

@@ -23,7 +23,7 @@ namespace ZalXamarin.Pages.Actualities
         }
 
         private async void AddButton_Clicked(object sender, EventArgs args) {
-            await action.CreateNewReport(Title, textEditor.Text);
+            await action.AddNewReportAsync(Title, textEditor.Text);
             await Navigation.PopAsync();
         }
     }
