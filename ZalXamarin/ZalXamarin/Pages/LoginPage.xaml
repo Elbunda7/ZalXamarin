@@ -14,7 +14,7 @@
                 Padding="10" 
                 CornerRadius="10" 
                 BackgroundColor="WhiteSmoke">
-                <StackLayout Padding="10,5">
+                <StackLayout Padding="10,5" Spacing="0">
 
                     <Image Source="icon.png" Margin="0"/>
 
@@ -25,6 +25,8 @@
                         HorizontalOptions="FillAndExpand"
                         Icon="ic_email_black_24dp.png"/>
 
+                    <Label x:Name="EmailErrorLabel" Margin="5,0" Text="EmailError" TextColor="Red" HorizontalOptions="End" FontSize="Micro"/>
+
                     <ie:IconEntry                             
                         x:Name="PasswordEntry"
                         Placeholder="Heslo"
@@ -32,6 +34,8 @@
                         Keyboard="Default"
                         HorizontalOptions="FillAndExpand"
                         Icon="ic_lock_black_24dp.png"/>
+
+                    <Label x:Name="PassErrorLabel" Margin="5,0" Text="PasswordError" TextColor="Red" HorizontalOptions="End" FontSize="Micro"/>
 
                     <StackLayout 
                         Orientation="Horizontal" 

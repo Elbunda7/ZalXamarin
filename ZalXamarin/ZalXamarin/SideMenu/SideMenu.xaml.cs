@@ -15,12 +15,12 @@ namespace ZalXamarin.SideMenu
     {
         public SideMenu() {
             InitializeComponent();
-            MasterPage.MenuHeaderClicked += OnMenuHeaderClicked;
+            MasterPage.MenuButtonClicked += OnMenuHeaderClicked;
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void OnMenuHeaderClicked(object sender, EventArgs e) {
-            Detail.Navigation.PushAsync(new LoginPage());
+        private void OnMenuHeaderClicked(Page page) {
+            Detail.Navigation.PushAsync(page);
             HideMenu();
         }
 

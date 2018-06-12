@@ -22,7 +22,7 @@ namespace ZalXamarin.Pages.Actualities
             Title = action.Name + " - zápis z akce";
         }
 
-        private async void AddButton_Clicked(object sender, EventArgs args) {
+        private async Task AddButton_Clicked(object sender, EventArgs args) {
             await action.AddNewReportAsync(Title, textEditor.Text);
             await Navigation.PopAsync();
         }

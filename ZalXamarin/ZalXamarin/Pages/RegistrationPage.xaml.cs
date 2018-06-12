@@ -26,14 +26,18 @@ namespace ZalXamarin.Pages
         }
 
         private async void RegistrationButton_Click(object sender, EventArgs args) {
-            bool isRegistered = false;//await Zal.Register(NameEntry.Text, SurnameEntry.Text, PhoneEntry.Text, EmailEntry.Text, PassEntry.Text);
+            bool isRegistered = await Zal.Session.RegisterAsync(NameEntry.Text, SurnameEntry.Text, PhoneEntry.Text, EmailEntry.Text, PassEntry.Text);
             if (isRegistered) {
-                Navigation.InsertPageBefore(new EmptyPage(), Navigation.NavigationStack.First());
-                await Navigation.PopToRootAsync();
+                await ShowProfile();
             }
             else {
                 await DisplayAlert("Regisrace", "Regisrace se nezdařila", "Ok");
             }
+        }
+
+        private async Task ShowProfile() {
+            Navigation.InsertPageBefore(new ProfilePage(), Navigation.NavigationStack.First());
+            await Navigation.PopToRootAsync();
         }
 
         private async void ToLogin_Click() {

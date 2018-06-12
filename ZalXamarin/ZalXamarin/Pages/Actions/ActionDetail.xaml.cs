@@ -25,19 +25,19 @@ namespace ZalXamarin.Pages.Actions
 
         private async Task InfoButton_ClickedAsync(object sender, EventArgs args) {
             if (action.HasInfo) {
-                await Navigation.PushAsync(new ActionInfoCreator(action));
+                await Navigation.PushAsync(new WebViewPage(await action.InfoLazyLoad()));
             }
             else {
-                await Navigation.PushAsync(new WebViewPage(await action.InfoLazyLoad()));
+                await Navigation.PushAsync(new ActionInfoCreator(action));
             }
         }
 
         private async Task RecordButton_ClickedAsync(object sender, EventArgs args) {
             if (action.HasReport) {
-                await Navigation.PushAsync(new ActionRecordCreator(action));
+                await Navigation.PushAsync(new WebViewPage(await action.ReportLazyLoad()));
             }
             else {
-                await Navigation.PushAsync(new WebViewPage(await action.ReportLazyLoad()));
+                await Navigation.PushAsync(new ActionRecordCreator(action));
             }
         }
 

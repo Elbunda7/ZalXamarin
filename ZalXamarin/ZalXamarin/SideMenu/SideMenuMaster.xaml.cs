@@ -11,13 +11,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZalXamarin.Pages;
+using ZalDomain.ActiveRecords;
 
 namespace ZalXamarin.SideMenu
 {
+    public delegate void MenuActionDelegate(Page page);
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SideMenuMaster : ContentPage
     {
-        public event EventHandler MenuHeaderClicked;
+        public event MenuActionDelegate MenuButtonClicked;
         public ListView ListView;
 
         public SideMenuMaster() {
@@ -25,9 +28,26 @@ namespace ZalXamarin.SideMenu
 
             BindingContext = new SideMenuMasterViewModel();
             ListView = MenuItemsListView;
-            //ConnectionLabel.Text = "Online: " + IS.IsConnected;
+
+            ShowUserInTheMenu(Zal.UserIsLogged, Zal.Session.CurrentUser);
+            Zal.Session.UsersSessionStateChanged += OnUsersSessionStateChanged;
         }
-                
+
+        private void OnUsersSessionStateChanged(Session session) {
+            ShowUserInTheMenu(session.IsLogged, session.CurrentUser);
+        }
+
+        private void ShowUserInTheMenu(bool toShow, User currentUser = null) {
+            LoginButton.IsVisible = !toShow;
+            LogoutButton.IsVisible = toShow;
+            ProfileImage.IsVisible = toShow;//todo: show user´s image
+            if (toShow) {
+                NameLabel.Text = currentUser.Nick;
+            }
+            else {
+                NameLabel.Text = "TOM Zálesák";
+            }
+        }
 
         class SideMenuMasterViewModel : INotifyPropertyChanged
         {
@@ -55,9 +75,15 @@ namespace ZalXamarin.SideMenu
             #endregion
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e) {
-            if (MenuHeaderClicked != null) {
-                MenuHeaderClicked.Invoke(sender, e);
+        private void LoginButton_Clicked(object sender, EventArgs e) => RaiseAction(new LoginPage());
+
+        private void ProfileImage_Tapped(object sender, EventArgs e) => RaiseAction(new ProfilePage());
+
+        private void LogoutButton_Clicked(object sender, EventArgs e) { }// => RaiseAction(sender, e);
+
+        private void RaiseAction(Page page) {
+            if (MenuButtonClicked != null) {
+                MenuButtonClicked.Invoke(page);
             }
         }
     }

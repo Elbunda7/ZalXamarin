@@ -29,19 +29,30 @@ namespace ZalXamarin
 
         private async void InitializeAppData() {
             //Zal.CommandExecutedOffline += OnCommandExecutedOffline;
-            //Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
-            //Zal.LoadDataFrom(await LoadFromStorageAsync(LOCAL_DATA_FILE));
-            var a = await LoadFromStorageAsync("f"+LOCAL_DATA_FILE);
-            //IS.Connect();            
-            await Zal.StartSynchronizingAsync();
+            await Task.Run(async () => {
+                //Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
+                //Zal.LoadDataFrom(await LoadFromStorageAsync(LOCAL_DATA_FILE));
+                var a = await LoadFromStorageAsync(LOCAL_DATA_FILE);
+                Zal.LoadDataFrom(a);
+                await Zal.Session.LoginWithTokenAsync();
+                //await Zal.StartSynchronizingAsync();
+
+            });
+            OnAppReady();
         }
 
+        private void OnAppReady() {
+            MainPage = new SideMenu.SideMenu();
+        }
+
+        
 
         protected override void OnStart() {
         }
 
         protected override void OnSleep() {
-            SaveToStorage( LOCAL_DATA_FILE, Zal.GetDataJson());
+            var a = Zal.GetDataJson();
+            SaveToStorage( LOCAL_DATA_FILE,a);
         }
 
         protected override void OnResume() {
