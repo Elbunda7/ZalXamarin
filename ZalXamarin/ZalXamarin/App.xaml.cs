@@ -34,8 +34,8 @@ namespace ZalXamarin
                 //Zal.LoadDataFrom(await LoadFromStorageAsync(LOCAL_DATA_FILE));
                 var a = await LoadFromStorageAsync(LOCAL_DATA_FILE);
                 Zal.LoadDataFrom(a);
-                await Zal.Session.LoginWithTokenAsync();
-                //await Zal.StartSynchronizingAsync();
+                await Zal.Session.TryLoginWithTokenAsync();
+                await Zal.StartSynchronizingAsync();
 
             });
             OnAppReady();

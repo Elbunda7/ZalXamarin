@@ -29,12 +29,12 @@ namespace ZalXamarin.SideMenu
             BindingContext = new SideMenuMasterViewModel();
             ListView = MenuItemsListView;
 
-            ShowUserInTheMenu(Zal.UserIsLogged, Zal.Session.CurrentUser);
+            OnUsersSessionStateChanged(Zal.Session);
             Zal.Session.UsersSessionStateChanged += OnUsersSessionStateChanged;
         }
 
         private void OnUsersSessionStateChanged(Session session) {
-            ShowUserInTheMenu(session.IsLogged, session.CurrentUser);
+            ShowUserInTheMenu(session.IsUserLogged, session.CurrentUser);
         }
 
         private void ShowUserInTheMenu(bool toShow, User currentUser = null) {
@@ -79,7 +79,9 @@ namespace ZalXamarin.SideMenu
 
         private void ProfileImage_Tapped(object sender, EventArgs e) => RaiseAction(new ProfilePage());
 
-        private void LogoutButton_Clicked(object sender, EventArgs e) { }// => RaiseAction(sender, e);
+        private async Task LogoutButton_Clicked(object sender, EventArgs e) {
+            await Zal.Session.Logout();
+        }
 
         private void RaiseAction(Page page) {
             if (MenuButtonClicked != null) {

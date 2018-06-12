@@ -76,7 +76,7 @@
                               Text="Odhlásit se"
                               TextColor="White"
                               FontSize="Small"
-                              Clicked="LoginButton_Clicked"
+                              Clicked="LogoutButton_Clicked"
                               BackgroundColor="Red"
                               IsVisible="false"/>
 
