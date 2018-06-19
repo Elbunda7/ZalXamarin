@@ -42,7 +42,7 @@ namespace ZalXamarin.Pages.Actions
         }
 
         private async void ParticipateButton_ClickedAsync(object sender, EventArgs args) {
-            bool result = await action.Participate(true);
+            bool result = await action.Join();
         }
 
         private async Task ClickableImageLabel_OnClickAsync() {

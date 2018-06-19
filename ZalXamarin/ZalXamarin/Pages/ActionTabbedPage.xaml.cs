@@ -15,12 +15,18 @@ namespace ZalXamarin.Pages
     {
         public ActionTabbedPage() {
             InitializeComponent();
-            Title = "Plán akcí";            
+            Title = "Plán akcí";
+            var toolbarItem = new ToolbarItem() {
+                Text = "Nový",
+                Order = ToolbarItemOrder.Secondary
+            };
+            toolbarItem.Clicked += NewActionEvent_ToolbarItemClicked;
+            ToolbarItems.Add(toolbarItem);
             Children.Add(new ActionsListPage());
             Children.Add(new ActionsListPage(DateTime.Today.Year));
         }
 
-        private async void AddButton_Clicked(object sender, EventArgs args) {
+        private async void NewActionEvent_ToolbarItemClicked(object sender, EventArgs e) {
             await Navigation.PushAsync(new ActionCreator());
         }
     }
