@@ -144,10 +144,10 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="ZalApiGateway">
-      <HintPath>..\..\..\Domain\ZalApiGateway\bin\Debug\ZalApiGateway.dll</HintPath>
+      <HintPath>..\..\..\ZalDomain\ZalApiGateway\bin\Debug\ZalApiGateway.dll</HintPath>
     </Reference>
     <Reference Include="ZalDomain">
-      <HintPath>..\..\..\Domain\ZalDomain\bin\Debug\ZalDomain.dll</HintPath>
+      <HintPath>..\..\..\ZalDomain\ZalDomain\bin\Debug\ZalDomain.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

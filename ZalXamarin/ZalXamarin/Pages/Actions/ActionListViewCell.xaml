@@ -2,34 +2,65 @@
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZalXamarin.Pages.Actions.ActionListViewCell">
-  <ViewCell.View>
+    <ViewCell.View>
 
-    <Frame Padding = "10"
-                 BackgroundColor="White"
-                 Margin ="16,12,16,4">
+        <Frame Padding = "10"
+            BackgroundColor="White"
+            Margin ="16,12,16,4">
 
-      <StackLayout Orientation="Horizontal"
-                   HorizontalOptions="StartAndExpand">
+            <StackLayout Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand">
 
-        <Image Source="icon.png" />
-        <StackLayout Orientation="Vertical"
-                     HorizontalOptions="StartAndExpand">
+                <Image Source="icon.png" />
 
-          <Label Text="{Binding Name}"
-            TextColor="{StaticResource Primary}"
-            HorizontalOptions="StartAndExpand"
-            FontSize="20"/>
-          
-          <Label Text="{Binding DateFrom}"
-            TextColor="{StaticResource DarkGrayColor}" />
-          
-          <Label Text="{Binding Type}"
-            HorizontalOptions="EndAndExpand"
-            TextColor="{StaticResource DarkGrayColor}" />
+                <StackLayout Orientation="Vertical"
+                     HorizontalOptions="FillAndExpand">
+                    
 
-        </StackLayout>
-      </StackLayout>
-    </Frame>
-    
-  </ViewCell.View>
+                    <StackLayout Orientation="Horizontal" 
+                        HorizontalOptions="FillAndExpand">
+
+                        <Label Text="{Binding Name}"
+                            TextColor="{StaticResource Primary}"
+                            HorizontalOptions="StartAndExpand"
+                            FontSize="20"/>
+
+                        <Image Source="baseline_build_black_24.png"
+                               HorizontalOptions="End"/>
+
+                    </StackLayout>
+                    
+
+                    <Label Text="{Binding DateFrom}"
+                        TextColor="{StaticResource DarkGrayColor}" />
+                    
+
+                    <StackLayout Orientation="Horizontal" 
+                        HorizontalOptions="FillAndExpand">
+
+                        <Label Text="{Binding Type}"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{StaticResource DarkGrayColor}" />
+
+                        <Label Text="23"
+                               FontSize="18"
+                            HorizontalOptions="End"
+                            TextColor="{StaticResource DarkGrayColor}" />
+
+                        <Image Source="ic_people_black_24dp.png"
+                               HorizontalOptions="End"/>
+
+                        <Image Source="baseline_how_to_reg_black_24.png" 
+                               HorizontalOptions="End"/>
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </Frame>
+
+    </ViewCell.View>
 </ViewCell>
