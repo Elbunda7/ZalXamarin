@@ -143,11 +143,8 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="ZalApiGateway">
-      <HintPath>..\..\..\ZalDomain\ZalApiGateway\bin\Debug\ZalApiGateway.dll</HintPath>
-    </Reference>
     <Reference Include="ZalDomain">
-      <HintPath>..\..\..\ZalDomain\ZalDomain\bin\Debug\ZalDomain.dll</HintPath>
+      <HintPath>..\..\..\Domain\ZalDomain\bin\Debug\ZalDomain.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

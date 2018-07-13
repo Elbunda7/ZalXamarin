@@ -1,5 +1,4 @@
-﻿using ZalApiGateway;
-using ZalDomain.ActiveRecords;
+﻿using ZalDomain.ActiveRecords;
 using ZalDomain.tools;
 using PCLStorage;
 using System;
@@ -33,7 +32,7 @@ namespace ZalXamarin
                 //Zal.LoadOfflineCommands(LoadFromStorage(OFFLINE_COMMANDS_FILE));
                 //Zal.LoadDataFrom(await LoadFromStorageAsync(LOCAL_DATA_FILE));
                 var a = await LoadFromStorageAsync(LOCAL_DATA_FILE);
-                Zal.LoadDataFrom(a);
+                //Zal.LoadDataFrom(a);
                 await Zal.Session.TryLoginWithTokenAsync();
                 await Zal.StartSynchronizingAsync();
 

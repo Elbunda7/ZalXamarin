@@ -25,7 +25,7 @@ namespace ZalXamarin.Pages
         private async void StartInitializingItems(int? year) {
             if (year.HasValue) {
                 Title = year.Value.ToString();
-                MyListView.ItemsSource = await Zal.Actions.GetActionEventsByYearAsync(year.Value);
+                MyListView.ItemsSource = await Zal.Actions.GetPassedActionEventsByYear(year.Value);
             }
             else {
                 Title = "Nadcházející";
