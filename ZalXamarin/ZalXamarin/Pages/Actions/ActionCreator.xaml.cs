@@ -17,7 +17,7 @@ namespace ZalXamarin.Pages.Actions
             InitializeComponent();
         }
 
-        private async void AddButton_Clicked(object sender, EventArgs args) {
+        private async Task AddButton_Clicked(object sender, EventArgs args) {
             string type = TypeEntry.Text ?? "";
             string name = NameEntry.Text ?? "";
             int days = DaysEntry.Text == null ? 0 : int.Parse(DaysEntry.Text);

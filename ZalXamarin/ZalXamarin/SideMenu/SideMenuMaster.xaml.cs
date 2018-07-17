@@ -42,7 +42,7 @@ namespace ZalXamarin.SideMenu
             LogoutButton.IsVisible = toShow;
             ProfileImage.IsVisible = toShow;//todo: show user´s image
             if (toShow) {
-                NameLabel.Text = currentUser.Nick;
+                NameLabel.Text = currentUser.NickName;
             }
             else {
                 NameLabel.Text = "TOM Zálesák";

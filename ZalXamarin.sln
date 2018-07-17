@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZalXamarin.Android", "ZalXamarin\ZalXamarin.Android\ZalXamarin.Android.csproj", "{F871A6EF-4374-4C6A-A49A-31224FF604D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZalXamarin", "ZalXamarin\ZalXamarin\ZalXamarin.csproj", "{E8FF7C46-012A-4151-AB13-77AA1935FE67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{066CE032-C845-4890-B85A-0BB5FE57AAEE} = {066CE032-C845-4890-B85A-0BB5FE57AAEE}
+		{95622F63-2224-4910-BBAB-2C0A0413A488} = {95622F63-2224-4910-BBAB-2C0A0413A488}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZalXamarin.UWP", "ZalXamarin\ZalXamarin.UWP\ZalXamarin.UWP.csproj", "{7F720B3B-8431-4ADA-AA5E-A9EFD9C20B0E}"
 EndProject

@@ -42,7 +42,7 @@
                             HorizontalOptions="StartAndExpand"
                             TextColor="{StaticResource DarkGrayColor}" />
 
-                        <Label Text="23"
+                        <Label Text="{Binding MembersCount}"
                                FontSize="18"
                             HorizontalOptions="End"
                             TextColor="{StaticResource DarkGrayColor}" />

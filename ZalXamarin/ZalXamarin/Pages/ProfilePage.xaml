@@ -15,7 +15,8 @@
                 Orientation="Vertical"
                 HorizontalOptions="FillAndExpand">
 
-                <local:ProfileMainLayout/>
+                <local:ProfileMainLayout Name="{Binding NickName}"
+                                         Age="{Binding Age}"/>
 
                 <ScrollView 
                     Padding="16"                    

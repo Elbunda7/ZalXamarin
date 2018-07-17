@@ -5,13 +5,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using ZalDomain.ActiveRecords;
 
 namespace ZalXamarin.Elements
 {
     public class ProfileMainLayout: StackLayout
     {
         private const int HEIGHT_SIZE = 150;
-        public ZalDomain.ActiveRecords.User User { get; set; }
+
+        private CircleImage mainImage;
+        private CircleImage minorImage;
+        private CircleImage minorImage2;
+        private Label nameLabel;
+        private Label ageLabel;
+
+        public string Name {
+            get { return GetValue(NameProperty) as string; }
+            set { SetValue(NameProperty, value); }
+        }
+
+        public int? Age {
+            get { return (int?)GetValue(AgeProperty); }
+            set { SetValue(AgeProperty, value); }
+        }
+
+        public static readonly BindableProperty NameProperty =
+            BindableProperty.Create("Name", typeof(string), typeof(ProfileMainLayout), "Name", BindingMode.TwoWay, null,
+                new BindableProperty.BindingPropertyChangedDelegate(NameChanged));
+
+        public static readonly BindableProperty AgeProperty =
+            BindableProperty.Create("Age", typeof(int?), typeof(ProfileMainLayout), -1, BindingMode.TwoWay, null,
+                new BindableProperty.BindingPropertyChangedDelegate(AgeChanged));
+
+        private static void NameChanged(BindableObject bindable, object oldValue, object newValue) {
+            (bindable as ProfileMainLayout).nameLabel.Text = newValue as string;
+        }
+
+        private static void AgeChanged(BindableObject bindable, object oldValue, object newValue) {
+            (bindable as ProfileMainLayout).ageLabel.Text = (int?)newValue + " let";//todo rok, roky or invisible
+        }
+
+
+
 
         public ProfileMainLayout(){
             HeightRequest = HEIGHT_SIZE;
@@ -23,18 +58,18 @@ namespace ZalXamarin.Elements
         }
 
         private View CreateProfileImage() {
-            CircleImage mainImage = new CircleImage {
+            mainImage = new CircleImage {
                 Source = "profile_boy.png",
                 BorderThickness = 1,
                 BorderColor = (Color)Application.Current.Resources["Primary"]
             };
-            CircleImage minorImage = new CircleImage {
+            minorImage = new CircleImage {
                 Source = "profile_girl.png",
                 HeightRequest = WidthRequest = 40,
                 BorderThickness = 2,
                 BorderColor = (Color)Application.Current.Resources["PrimaryDark"]
             };
-            CircleImage minorImage2 = new CircleImage {
+            minorImage2 = new CircleImage {
                 Source = "profile_girl.png",
                 HeightRequest = WidthRequest = 40,
                 BorderThickness = 2,
@@ -55,15 +90,15 @@ namespace ZalXamarin.Elements
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            Label nameLabel = new Label() {
-                Text = "Jméno Příjmení",
+            nameLabel = new Label() {
+                Text = "Přezdívka",
                 LineBreakMode = LineBreakMode.TailTruncation,
                 TextColor = (Color)Application.Current.Resources["LightTextColor"],
                 FontSize = 24,
                 HorizontalOptions = LayoutOptions.Center
             };
-            Label ageLabel = new Label() {
-                Text = "16 let",
+            ageLabel = new Label() {
+                Text = "? let",
                 TextColor = (Color)Application.Current.Resources["LightTextColor"],
                 FontSize = 16,
                 HorizontalOptions = LayoutOptions.Center

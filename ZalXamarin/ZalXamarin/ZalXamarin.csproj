@@ -103,6 +103,9 @@
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserCreator.xaml.cs">
+      <DependentUpon>UserCreator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SideMenu\SideMenu.xaml.cs">
       <DependentUpon>SideMenu.xaml</DependentUpon>
@@ -266,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\InformationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UserCreator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

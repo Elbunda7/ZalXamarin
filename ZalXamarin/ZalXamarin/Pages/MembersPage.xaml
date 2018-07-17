@@ -9,7 +9,7 @@
           SeparatorVisibility="None">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <TextCell Text="{Binding ShortName}" />
+            <TextCell Text="{Binding NickName}" />
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
