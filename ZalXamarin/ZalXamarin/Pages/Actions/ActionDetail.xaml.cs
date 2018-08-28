@@ -41,6 +41,10 @@ namespace ZalXamarin.Pages.Actions
             }
         }
 
+        private async Task JoinButton_ClickedAsync(object sender, EventArgs args) {
+            await action.Join();
+        }
+
         private async void ParticipateButton_ClickedAsync(object sender, EventArgs args) {
             bool result = await action.Join();
         }

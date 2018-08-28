@@ -108,6 +108,11 @@
         Text="Zápis z akce"
         Clicked="RecordButton_ClickedAsync"/>
 
+              <Button
+        x:Name="JoinButton"
+        Text="Zůčastnit se"
+        Clicked="JoinButton_ClickedAsync"/>
+
             </StackLayout>
         </StackLayout>
 
