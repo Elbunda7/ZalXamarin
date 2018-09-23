@@ -15,6 +15,7 @@
           CachingStrategy="RecycleElement"
           SeparatorVisibility="None"
           RowHeight="120"
+          IsPullToRefreshEnabled="True"
           BackgroundColor="{StaticResource GrayBackgroundColor}">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -29,12 +30,12 @@
             AbsoluteLayout.LayoutBounds="1,1,-1,-1"
             AbsoluteLayout.LayoutFlags="PositionProportional" />
 
-        <StackLayout>
+        <!--<StackLayout>
             <local:RoundedButton Icon="ic_edit_black_24dp.png"/>
             <local:RoundedButton Icon="ic_edit_black_24dp.png" BackgroundColor="Azure"/>
             <local:RoundedButton Icon="ic_edit_black_24dp.png" Text="dloooooooo000000000uhy" IsCircle="False"/>
 
-        </StackLayout>
+        </StackLayout>-->
 
     </AbsoluteLayout>
 

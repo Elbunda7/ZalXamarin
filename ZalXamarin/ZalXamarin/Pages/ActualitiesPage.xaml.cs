@@ -15,10 +15,22 @@ namespace ZalXamarin.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActualitiesPage : ContentPage
     {
+
+
+        int i = 0;
         public ActualitiesPage() {
             InitializeComponent();
             Title = "Novinky";
-            //MyListView.ItemsSource = Zal.Actualities.GetAll();
+            MyListView.ItemsSource = Zal.Actualities.Data;
+            Button button = new Button() {
+                Text = "Load next",                
+            };
+            button.Clicked += Button_Clicked;
+            MyListView.Footer = button;
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e) {
+            await Zal.Actualities.LoadNext();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {

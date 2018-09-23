@@ -20,7 +20,7 @@ namespace ZalXamarin.Pages.Actualities
         }
 
         private async Task AddButton_Clicked(object sender, EventArgs args) {
-            await Zal.Actualities.AddNewArticle("Title", textEditor.Text, 0);
+            await Zal.Actualities.AddNewArticle("ApplicationTilte", textEditor.Text, 0);
             await Navigation.PopAsync();
         }
     }

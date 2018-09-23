@@ -10,7 +10,7 @@
       <StackLayout Orientation="Horizontal">
         <Label Text="{Binding Title}"
           TextColor="{StaticResource Primary}" />
-        <Label Text="{Binding ShortText}"
+        <Label Text="{Binding Text}"
           HorizontalOptions="EndAndExpand"
           TextColor="#503026" />
       </StackLayout>
